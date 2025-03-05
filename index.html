@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technova</title>
+    <link rel="shortcut icon" type="image/png" href="tech.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
@@ -14,10 +15,76 @@
             background: radial-gradient(ellipse at bottom, #305a5c, #000000);
             background-attachment: fixed;
         }
+        nav a 
+        {
+            text-decoration: none;
+        }
+        .navs
+        {
+            position: relative;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            padding: 5px 10px;
+            margin-right: 5px;
+        }
+        .navs::after   
+        {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: cyan;
+            transition: width 0.3s ease-in-out;
+        }
+        .navs:hover::after 
+        {
+            width: 100%;
+        }
         #logo 
         {
-            width: 30%;
+            width: 40%;
             height: auto;
+        }
+        #logos
+        {
+            width: 70%;
+            height: auto;
+        }
+        #heads
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #head   
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        h1
+        {
+            font-size: 70px;
+            color: cyan;
+            transition: text-shadow 0.3s ease-in-out;
+        }
+        h2
+        {
+            color: white;
+            text-align: justify;
+            transition: text-shadow 0.3s ease-in-out;
+        }
+        #head:hover h1
+        {
+            text-shadow: 0 0 20px cyan, 0 0 40px cyan;
+        }
+        #head:hover h2
+        {
+            text-shadow: 0 0 10px rgb(185, 185, 185), 0 0 50px rgb(185, 185, 185);
         }
         .card 
         {
@@ -26,13 +93,18 @@
             background: #1f3d40;
             color: white;
             width: 100%;
-            height: 300px;
+            height: auto;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center ;
+            overflow: hidden;
         }
         .card img 
         {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+            margin: 10px;
+            width: 90%;
+            height: 300px;  
+            object-fit: cover;
         }
         .card:hover 
         {
@@ -57,69 +129,117 @@
         {
             margin-bottom: 20px;
         }
+        .modal-content 
+        {
+            background-color: #173436; 
+            color: white;
+            border-radius: 15px; 
+        }
+        #modalImage 
+        {
+            width: 80%; 
+            height: auto; 
+            display: block;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
 
+   
     <header class="bg-dark text-white text-center py-2">
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-                <img src="technova.png" id="logo" class="icon ms-3">
+        <div class="d-flex justify-content-between align-items-center px-4">
+            <div class="d-flex">
+                <img src="technova.png" id="logo" class="icon">
             </div>
-            <div class="me-4"><a href="#" class="text-white text-decoration-underline fs-5 fw-bold">Home</a></div>
+
+            <nav class="d-flex flex-row">
+                <a href="#" class="navs">Home</a>
+                <a href="#" class="navs">About Us</a>
+                <a href="#" class="navs">Contact Us</a>
+            </nav>
         </div>
     </header>
 
     <div class="container">
         <div class="row g-4 mt-3">
-            <div class="col-md-4" >
-                <div class="card">
-                    <img src="1f.png" class="card-img" alt="Image 1">
-                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                        <p class="text-center">Corsair RM850x Power Supply</p>
-                    </div>
-                </div>
+            <div class="col-md-6" id="heads">
+                <img src="tech.png" id="logos" class="icon ms-3">
             </div>
 
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="2f.png" class="card-img" alt="Image 2">
-                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                        <p class="text-center">Vengeance DDR4 16GB RAM</p>
-                    </div>
-                </div>
+            <div class="col-md-6" id="head">
+                <h1>Technova</h1>
+                <h2>Be one of the Million's that know there true colors</h2>
             </div>
-
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="3f.png" class="card-img" alt="Image 3">
-                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                        <p class="text-center">GIGABYTE H310M H Motherboard</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-2"></div>
-
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="4f.png" class="card-img" alt="Image 4">
-                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                        <p class="text-center">Alseye 120mm RGB Fan</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="5f.png" class="card-img" alt="Image 5">
-                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                        <p class="text-center">SanDisk HDD 480GB</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-2"></div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="row g-4 mt-3">
+            <div class="col-md-6">
+                <div class="card" onclick="showDetails('Tarpaulin', 'Its a customizable and flexible with waterproof and water-resistant properties, used for printing ads, banners, streamers, backdrops, or billboards.', 'T1.png')">
+                    <img src="T1.png" class="card-img" alt="Image 1">
+                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                        <p class="text-center">Tarpaulin</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card" onclick="showDetails('Sticker', 'Its an adhesive material that can be peeled off and applied to surfaces like laptops, walls, or vehicles. Its used for decoration, branding, and labeling.', 'S1.png')">
+                    <img src="S1.png" class="card-img" alt="Image 2">
+                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                        <p class="text-center">Sticker</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card" onclick="showDetails('Sintra', 'Sintra board is a lightweight, durable PVC material used for signage, displays, and printing. Its easy to cut, weather-resistant, and suitable for both indoor and outdoor use.', 'SB1.png')">
+                    <img src="SB1.png" class="card-img" alt="Image 3">
+                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                        <p class="text-center">Sintra</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card" onclick="showDetails('ID & ID Lace', 'An ID lace is a wearable lanyard that holds an ID card, allowing for easy access and security. It is commonly used in workplaces, events, or conferences for identification purposes and to keep the ID card easily accessible.', 'ID1.jpg')">
+                    <img src="ID1.jpg" class="card-img" alt="Image 4">
+                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                        <p class="text-center">ID & ID Lace</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <img id="modalImage" src="" class="img-fluid mb-3">
+                    <p id="modalDescription"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showDetails(title, description, imageSrc) 
+        {
+            document.getElementById('productModalLabel').innerText = title;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('modalImage').src = imageSrc;
+            var modal = new bootstrap.Modal(document.getElementById('productModal'));
+            modal.show();
+        }
+    </script>
+
 </body>
 </html>
